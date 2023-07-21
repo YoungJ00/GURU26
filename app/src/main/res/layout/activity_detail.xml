@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".Detail">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -26,7 +27,7 @@
             android:layout_weight="1"
             android:layout_height = "wrap_content"
             android:gravity="center"
-            android:text="비상시"
+            android:text="두 가지 색 : 이색"
             android:textColor="@android:color/white" />
 
         <ImageView
@@ -46,10 +47,103 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="두 가지의 색 : 이색"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="10dp"
+        />
 
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="10dp"
+            android:paddingLeft="10dp"
+          >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:scaleType="center"
+                android:src="@drawable/_icon__location_pin_" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="서울여자대학교 50주년기념관 2층"
+                android:paddingLeft="10dp"
+                android:textStyle="normal"
+                android:textSize="15sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="10dp"
+            android:paddingLeft="10dp"
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:scaleType="center"
+                android:src="@drawable/group_762" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/noto_sans"
+                android:paddingLeft="10dp"
+                android:text="2023.7.20 - 31"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="10dp"
+            android:paddingLeft="10dp"
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:scaleType="center"
+                android:src="@drawable/_icon__clock_" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/noto_sans"
+                android:paddingLeft="10dp"
+                android:text="12:00 - 18:00"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            tools:text="웹사이트 방문하기" />
 
     </LinearLayout>
+
 
 
 </LinearLayout>
