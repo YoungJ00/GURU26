@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".StartActivity">
-
+    tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/AppName"
@@ -52,6 +50,7 @@
         android:ems="10"
         android:hint="email@swu.ac.kr"
         android:inputType="text|textEmailAddress"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/PwEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,6 +64,7 @@
         android:ems="10"
         android:hint="password"
         android:inputType="number|numberPassword"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

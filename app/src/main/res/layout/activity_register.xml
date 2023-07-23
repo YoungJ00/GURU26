@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn">
-
+    tools:context=".RegisterActivity">
     <ImageView
         android:id="@+id/myImageView"
         android:layout_width="wrap_content"
@@ -17,18 +16,6 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
-        android:id="@+id/makePwEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="number|numberPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/makeEmailEditText" />
-
-    <EditText
         android:id="@+id/makeIdEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,6 +23,7 @@
         android:ems="10"
         android:hint="ID"
         android:inputType="text"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myImageView" />
@@ -47,21 +35,11 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="number|numberPassword"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/makeIdEditText" />
-
-    <EditText
-        android:id="@+id/makePwCheckEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password 확인"
-        android:inputType="number|numberPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/makePwEditText" />
 
     <Button
         android:id="@+id/btnSignIn"
@@ -73,5 +51,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/makePwCheckEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/makeEmailEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
