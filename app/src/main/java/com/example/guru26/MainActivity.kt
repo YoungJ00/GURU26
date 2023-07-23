@@ -9,31 +9,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var rv_poster: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        rv_poster=findViewById(R.id.rv_poster)
 
-        val posterList = arrayListOf(
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-
-            )
-
-        rv_poster.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        rv_poster.setHasFixedSize(true)
-
-        rv_poster.adapter = PosterAdapter(posterList)
 
         // 하단 탭이 눌렸을 때 화면을 전환하기 위해선 이벤트 처리하기 위해 BottomNavigationView 객체 생성
         var bnv_main = findViewById(R.id.bnv_main) as BottomNavigationView
