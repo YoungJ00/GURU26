@@ -31,4 +31,6 @@ class PosterAdapter(val posterList: ArrayList<Poster>): RecyclerView.Adapter<Pos
         val date = itemView.findViewById<TextView>(R.id.tv_date) // 일시
         val place = itemView.findViewById<TextView>(R.id.tv_place) // 장소
     }
+
+
 }
