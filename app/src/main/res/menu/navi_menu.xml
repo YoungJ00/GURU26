@@ -5,16 +5,20 @@
         android:id="@+id/first"
         app:showAsAction="ifRoom"
         android:enabled="true"
-        android:icon="@drawable/baseline_home_24"/>
+        android:icon="@drawable/baseline_home_24"
+        android:title="home"/>
+
 
     <item
         android:id="@+id/second"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/baseline_add_circle_outline_24" />
+        android:icon="@drawable/baseline_add_circle_outline_24"
+        android:title="" />
 
     <item
         android:id="@+id/third"
         app:showAsAction="ifRoom"
         android:enabled="true"
-        android:icon="@drawable/baseline_person_24" />
+        android:icon="@drawable/baseline_person_24"
+        android:title="my"/>
 </menu>

@@ -11,24 +11,41 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/swured">
+        android:background="#9E1A20"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/_icon__close_" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="전시회 등록하기"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:layout_gravity="center"
-            android:gravity="center"/>
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="내 전시회 등록"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:scaleType="center" />
 
     </LinearLayout>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -290,6 +307,32 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="match_parent"/>
+
+        <Button
+        android:backgroundTint="@color/swured"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="작성 완료"
+        android:layout_gravity="center"
+        android:layout_weight="1" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
 
 
 </LinearLayout>
