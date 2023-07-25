@@ -15,11 +15,13 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <ImageView
+        <ImageButton
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:scaleType="center"
-            android:src="@drawable/baseline_arrow_back_white_24" />
+            android:src="@drawable/baseline_arrow_back_white_24"
+            android:backgroundTint="@color/swured"
+            android:contentDescription="no"/>
 
         <TextView
             android:layout_width="0dp"
@@ -30,17 +32,20 @@
             android:textColor="@android:color/white"
             android:textSize="15sp" />
 
-        <ImageView
+        <View
             android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:scaleType="center"
-            android:src="@drawable/baseline_share_white_24" />
+            android:layout_height="match_parent" />
 
     </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,7 +71,7 @@
                 android:paddingVertical="5dp"
                 android:text="두 가지의 색 : 이색"
                 android:textSize="21sp"
-                android:textStyle="bold" />
+                android:textStyle="" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -203,16 +208,12 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:backgroundTint="#ffffff"
-                android:background="#000000"
                 android:text="더 보기"
+                android:textColor="#656565"
                 android:textSize="15sp" />
 
         </LinearLayout>
-
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -243,6 +244,67 @@
         </LinearLayout>
         </LinearLayout>
     </ScrollView>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/_icon__upload_share_"
+            android:scaleType="center"
+            android:backgroundTint="#ffffff"
+            android:contentDescription="no"/>
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp">
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/_icon__heart_outline_"
+                android:scaleType="center"
+                android:backgroundTint="#ffffff"
+                android:contentDescription="no"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="20"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    />
+
+                <View
+
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
 
 
