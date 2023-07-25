@@ -23,7 +23,6 @@ class SettingFragment : Fragment() {
     private var param2: String? = null
 
     private lateinit var viewPager: ViewPager
-
     private lateinit var tabLayout: TabLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,8 +30,6 @@ class SettingFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-
-
         }
     }
 
@@ -55,8 +52,8 @@ class SettingFragment : Fragment() {
         tabLayout.setupWithViewPager(viewPager)
 
         // 탭 이름 설정 (TabPagerAdapter에서 정의한 메소드 사용)
-        tabLayout.getTabAt(0)?.text = "Tab 1"
-        tabLayout.getTabAt(1)?.text = "Tab 2"
+        tabLayout.getTabAt(0)?.text = "작성글"
+        tabLayout.getTabAt(1)?.text = "좋아요"
 
 
         return view

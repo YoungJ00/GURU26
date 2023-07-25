@@ -15,6 +15,6 @@ class TabPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_R
     }
 
     override fun getCount(): Int {
-        return 3 // 탭 개수
+        return 2 // 탭 개수
     }
 }

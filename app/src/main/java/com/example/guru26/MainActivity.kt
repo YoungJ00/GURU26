@@ -12,13 +12,9 @@ import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
-    private var fragment0: Fragment = LikeFragment()
-    private var fragment1: Fragment = WorteFragment()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         val bnv_main = findViewById<BottomNavigationView>(R.id.bnv_main)
         bnv_main.setOnNavigationItemSelectedListener { item ->
@@ -41,13 +37,5 @@ class MainActivity : AppCompatActivity() {
 
         bnv_main.selectedItemId = R.id.first
     }
-    fun hideTabLayout() {
-        val tabs: TabLayout = findViewById(R.id.tabLayout)
-        tabs.visibility = View.GONE
-    }
 
-    fun showTabLayout() {
-        val tabs: TabLayout = findViewById(R.id.tabLayout)
-        tabs.visibility = View.VISIBLE
-    }
 }
