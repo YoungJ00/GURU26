@@ -3,25 +3,27 @@ package com.example.guru26
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.tabs.TabLayout
+
+
 class MainActivity : AppCompatActivity() {
 
+    private var fragment0: Fragment = LikeFragment()
+    private var fragment1: Fragment = WorteFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // 하단 탭이 눌렸을 때 화면을 전환하기 위해선 이벤트 처리하기 위해 BottomNavigationView 객체 생성
-        var bnv_main = findViewById(R.id.bnv_main) as BottomNavigationView
 
-        // OnNavigationItemSelectedListener를 통해 탭 아이템 선택 시 이벤트를 처리
-        // navi_menu.xml 에서 설정했던 각 아이템들의 id를 통해 알맞은 프래그먼트로 변경하게 한다.
-        bnv_main.run { setOnNavigationItemSelectedListener {
-            when(it.itemId) {
+        val bnv_main = findViewById<BottomNavigationView>(R.id.bnv_main)
+        bnv_main.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
                 R.id.first -> {
-                    // 다른 프래그먼트 화면으로 이동하는 기능
                     val homeFragment = HomeFragment()
                     supportFragmentManager.beginTransaction().replace(R.id.fl_container, homeFragment).commit()
                 }
@@ -37,11 +39,15 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-            selectedItemId = R.id.first
-        }
-
-
+        bnv_main.selectedItemId = R.id.first
+    }
+    fun hideTabLayout() {
+        val tabs: TabLayout = findViewById(R.id.tabLayout)
+        tabs.visibility = View.GONE
     }
 
-
+    fun showTabLayout() {
+        val tabs: TabLayout = findViewById(R.id.tabLayout)
+        tabs.visibility = View.VISIBLE
+    }
 }
