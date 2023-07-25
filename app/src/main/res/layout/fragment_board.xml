@@ -16,11 +16,9 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <ImageView
+        <View
             android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:scaleType="center"
-            android:src="@drawable/_icon__close_" />
+            android:layout_height="match_parent" />
 
         <TextView
             android:layout_width="0dp"
