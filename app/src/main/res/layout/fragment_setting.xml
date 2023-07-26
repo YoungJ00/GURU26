@@ -87,18 +87,21 @@
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                app:tabTextColor="@color/black"
+                android:background="#ffffff"
                 android:minHeight="?attr/actionBarSize"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/view_pager"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:tabTextColor="#c4c4c4"
+                app:tabSelectedTextColor="@color/swured"
+                app:tabIndicatorColor="@color/swured"
+                android:outlineAmbientShadowColor="@color/black"/>
 
         </LinearLayout>
+
+        <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     </LinearLayout>
 
 
