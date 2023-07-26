@@ -17,7 +17,9 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <View
+            <ImageButton
+                android:backgroundTint="@color/swured"
+                android:src="@drawable/_icon__close_"
                 android:layout_width="50dp"
                 android:layout_height="match_parent" />
 
@@ -59,8 +61,7 @@
                     <LinearLayout
                         android:id="@id/linearLayout02"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/linearLayout01">
+                        android:layout_height="wrap_content">
 
                         <ImageView
                             android:id="@id/imageView5"
@@ -87,13 +88,8 @@
                                 android:layout_height="142dp"
                                 android:hint="전시회의 설명을 적어주세요 ">
                             </EditText>
-
                         </com.google.android.material.textfield.TextInputLayout>
-
-
                         </LinearLayout>
-
-
                     </LinearLayout>
 
 

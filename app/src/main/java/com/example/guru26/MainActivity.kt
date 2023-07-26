@@ -29,10 +29,10 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.fl_container, homeFragment).commit()
                 }
                 R.id.second -> {
-                    if(ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED)
+                    if(ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED){
                         startActivity(Intent(this,AddPhotoActivity::class.java))
                     /* val boardFragment = BoardFragment()
-                    supportFragmentManager.beginTransaction().replace(R.id.fl_container, boardFragment).commit()*/
+                    supportFragmentManager.beginTransaction().replace(R.id.fl_container, boardFragment).commit()*/}
                 }
                 R.id.third -> {
                     val settingFragment = SettingFragment()
