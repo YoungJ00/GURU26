@@ -70,7 +70,7 @@ class AddPhotoActivity : AppCompatActivity() {
     private fun contentUpload() {
         //Make filename
         val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
-        val imageFileName = "IMAGE_+timestamp+_png"
+        val imageFileName = "IMAGE_"+timestamp+"_png"
 
         val storageRef = storage?.reference?.child("images")?.child(imageFileName)
 
