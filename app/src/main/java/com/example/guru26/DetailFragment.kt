@@ -62,7 +62,7 @@ class DetailFragment : Fragment() {
             }
     }
 
-    viewholder.detailviewitem_favorite_imageview.setOnClickListner{
+   /* viewholder.detailviewitem_favorite_imageview.setOnClickListner{
         favoriteEvent(p1)
     }
 
@@ -93,5 +93,5 @@ class DetailFragment : Fragment() {
             transaction.set(tsDoc,contentDTO)
         }
     }
-
+*/
 }
