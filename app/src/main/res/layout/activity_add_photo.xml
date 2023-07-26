@@ -9,7 +9,8 @@
         android:id="@+id/linearLayout01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -59,7 +60,8 @@
                     <LinearLayout
                         android:id="@id/linearLayout02"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        tools:ignore="MissingConstraints">
 
                         <ImageView
                             android:id="@id/imageView5"
@@ -101,7 +103,8 @@
                         android:textStyle="bold"
                         app:layout_constraintTop_toBottomOf="@id/linearLayout02"
                         tools:layout_editor_absoluteX="24dp"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="10dp"
+                        tools:ignore="MissingConstraints" />
 
                     <EditText
                         android:id="@+id/editTextText3"
@@ -117,6 +120,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
                     <View
+                        android:id="@+id/view"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginStart="24dp"
@@ -142,13 +146,14 @@
                         android:id="@+id/editTextText4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="10dp"
                         android:ems="10"
                         android:hint="전시회 장소를 입력하세요"
                         android:inputType="text"
                         android:textSize="15sp"
-                        app:layout_constraintStart_toStartOf="@+id/textView8"
-                        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                        app:layout_constraintBottom_toBottomOf="@+id/btnPin"
+                        app:layout_constraintStart_toEndOf="@+id/btnPin"
+                        app:layout_constraintTop_toTopOf="@+id/btnPin" />
 
                     <TextView
                         android:id="@+id/textView9"
@@ -158,8 +163,8 @@
                         android:text="전시회 일시"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/editTextText4"
-                        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+                        app:layout_constraintStart_toStartOf="@+id/btnPin"
+                        app:layout_constraintTop_toBottomOf="@+id/btnPin" />
 
                     <EditText
                         android:id="@+id/editTextText5"
@@ -251,13 +256,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginEnd="24dp"
                         android:background="#D9D9D9"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/editTextText9" />
+
+                    <Button
+                        android:id="@+id/btnPin"
+                        android:layout_width="25dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/_icon__location_pin_"
+                        app:layout_constraintTop_toBottomOf="@+id/textView8"
+                        tools:layout_editor_absoluteX="24dp" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
