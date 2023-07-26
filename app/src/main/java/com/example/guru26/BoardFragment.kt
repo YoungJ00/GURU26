@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.google.android.material.internal.ContextUtils.getActivity
 
@@ -21,7 +22,7 @@ private const val ARG_PARAM2 = "param2"
  */
 
 class BoardFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
     private var param1: String? = null
     private var param2: String? = null
 
@@ -39,6 +40,17 @@ class BoardFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_board, container, false)
+    }
+
+    override fun onViewCreated(view:View, savedInstanceState: Bundle?){
+        super.onViewCreated(view, savedInstanceState)
+
+        val btnFinish : Button = view.findViewById(R.id.btnFinish)
+        btnFinish.setOnClickListener {
+            val homeFragment = HomeFragment()
+            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fl_container, homeFragment).commit()
+
+        }
     }
 
     companion object {
