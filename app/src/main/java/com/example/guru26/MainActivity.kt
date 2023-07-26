@@ -7,14 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
 
         val bnv_main = findViewById<BottomNavigationView>(R.id.bnv_main)
@@ -25,11 +27,7 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.fl_container, homeFragment).commit()
                 }
                 R.id.second -> {
-                    if (ContextCompat.checkSelfPermission(
-                            this,
-                            Manifest.permission.READ_EXTERNAL_STORAGE
-                        ) == PackageManager.PERMISSION_GRANTED
-                    ) {
+                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                         startActivity(Intent(this, AddPhotoActivity::class.java))
                     }
                 }
