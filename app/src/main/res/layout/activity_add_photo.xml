@@ -17,9 +17,7 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:backgroundTint="@color/swured"
-                android:src="@drawable/_icon__close_"
+            <View
                 android:layout_width="50dp"
                 android:layout_height="match_parent" />
 

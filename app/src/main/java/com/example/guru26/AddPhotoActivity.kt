@@ -174,5 +174,5 @@ class AddPhotoActivity : AppCompatActivity() {
                 finish()
 
             }*/
-        }
     }
+}

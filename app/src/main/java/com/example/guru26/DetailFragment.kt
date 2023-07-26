@@ -62,4 +62,36 @@ class DetailFragment : Fragment() {
             }
     }
 
+    viewholder.detailviewitem_favorite_imageview.setOnClickListner{
+        favoriteEvent(p1)
+    }
+
+    if(contentDTOs!![p1].favorites.containsKey(uid)){
+        viewholder.detailviewitem_favorite_imageview.setImageResource(R.drawable._icon__heart_outline_)
+    }
+    else{
+        viewholder.detailviewitem_favorite_imageview.setImageResource(R.drawable._icon__heart_outline_)    }
+
+    fun favoriteEvent(position: Int)
+    {
+        var tsDoc = firestore?.collection("images")?.document(contentUidList[position])
+        firestore?. runTransaction{ transaction ->
+
+            var uid = FirebaseAuth.getInstance().currentUser?.uid
+            var contentDTO = transaction.get(tsDoc!!).toObject(ContentDTO::class.java)
+
+            if(cotentDTO!!.favorites.containsKey(uid)){
+                //when the button is clicked
+                contentDTO?.favoriteCount = contentDTO?.favoriteCount -1
+                contentDTO?.favorites.remove(uid)
+            }
+            else{
+                // when the button is not clicked
+                contentDTO?.favoriteCount = contentDTO?.favoritecount + 1
+                contentDTO?.favorites.[uid!!] = true
+            }
+            transaction.set(tsDoc,contentDTO)
+        }
+    }
+
 }
