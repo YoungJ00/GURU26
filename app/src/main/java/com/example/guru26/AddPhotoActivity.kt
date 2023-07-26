@@ -16,6 +16,7 @@ import com.google.firebase.storage.UploadTask
 import java.text.SimpleDateFormat
 import java.util.*
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 
 class AddPhotoActivity : AppCompatActivity() {
@@ -26,6 +27,18 @@ class AddPhotoActivity : AppCompatActivity() {
     var firestore: FirebaseFirestore? = null
     lateinit var button: Button
     lateinit var imageView: ImageView
+    lateinit var editText01: EditText
+    lateinit var editText02: EditText
+    lateinit var editText03: EditText
+    lateinit var editText04: EditText
+    lateinit var editText05: EditText
+    lateinit var editText06: EditText
+    lateinit var editText07: EditText
+
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_photo)
@@ -44,6 +57,8 @@ class AddPhotoActivity : AppCompatActivity() {
         button = findViewById(R.id.add_photo_btn)
         button.setOnClickListener {
             contentUpload()
+
+
         }
     }
 
@@ -73,9 +88,91 @@ class AddPhotoActivity : AppCompatActivity() {
 
         var storageRef = storage?.reference?.child("images")?.child(imageFileName)
 
-        //Promise method
+
+        storageRef?.putFile(photoUri!!)?.continueWithTask { task: Task<UploadTask.TaskSnapshot> ->
+            return@continueWithTask storageRef.downloadUrl
+        }?.addOnSuccessListener { uri ->
+            var contentDTO = ContentDTO()
+
+            contentDTO.imageUrl = uri.toString()
+
+            contentDTO.uid = auth?.currentUser?.uid
+
+            contentDTO.usrId = auth?.currentUser?.email
+
+
+            editText01 = findViewById(R.id.explain01)
+            contentDTO.explain= editText01.text.toString()
+
+            editText02 = findViewById(R.id.editTextText5)
+            contentDTO.exhStartDay= editText02.text.toString()
+
+            editText03 = findViewById(R.id.editTextText6)
+            contentDTO.exhEndDay= editText03.text.toString()
+
+            editText04 = findViewById(R.id.editTextText3)
+            contentDTO.exhName= editText04.text.toString()
+
+            editText05 = findViewById(R.id.editTextText4)
+            contentDTO.exhPlace= editText05.text.toString()
+
+            editText06 = findViewById(R.id.editTextText9)
+            contentDTO.exhLink= editText06.text.toString()
+
+            editText07 = findViewById(R.id.editTextText7)
+            contentDTO.exhTime= editText07.text.toString()
+
+            contentDTO.timeStamp = System.currentTimeMillis()
+
+            firestore?.collection("images")?.document()?.set(contentDTO)
+
+            setResult(Activity.RESULT_OK)
+
+            finish()
+
+        }
+
+        /*//Promise method
         storageRef?.putFile(photoUri!!)?.addOnSuccessListener {
-            Toast.makeText(this, getString(R.string.upload_sucess), Toast.LENGTH_LONG).show()
+            storageRef.downloadUrl.addOnSuccessListener { uri->
+                var contentDTO = ContentDTO()
+
+                contentDTO.imageUrl = uri.toString()
+
+                contentDTO.uid = auth?.currentUser?.uid
+
+                contentDTO.usrId = auth?.currentUser?.email
+
+
+                editText01 = findViewById(R.id.explain01)
+                contentDTO.explain= editText01.text.toString()
+
+                editText02 = findViewById(R.id.editTextText5)
+                contentDTO.exhStartDay= editText02.text.toString()
+
+                editText03 = findViewById(R.id.editTextText6)
+                contentDTO.exhEndDay= editText03.text.toString()
+
+                editText04 = findViewById(R.id.editTextText3)
+                contentDTO.exhName= editText04.text.toString()
+
+                editText05 = findViewById(R.id.editTextText4)
+                contentDTO.exhPlace= editText05.text.toString()
+
+                editText06 = findViewById(R.id.editTextText9)
+                contentDTO.exhLink= editText06.text.toString()
+
+                editText07 = findViewById(R.id.editTextText7)
+                contentDTO.exhTime= editText07.text.toString()
+
+                contentDTO.timeStamp = System.currentTimeMillis()
+
+                firestore?.collection("images")?.document()?.set(contentDTO)
+
+                setResult(Activity.RESULT_OK)
+
+                finish()
+
+            }*/
         }
     }
-}
