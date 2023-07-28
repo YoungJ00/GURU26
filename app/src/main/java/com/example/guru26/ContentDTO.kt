@@ -14,6 +14,6 @@ data class ContentDTO(var explain : String?=null,
                       var exhTime : String?= null,
                       var exhLink : String? = null,
                       var timeStamp : Long? = null,
-                      var favoriteCount: Int =0,
-                      var favorites : MutableMap<String,Boolean> = HashMap()){
+                      var likeCount: Int =0,
+                      var likes : MutableMap<String,Boolean> = HashMap()){
 }

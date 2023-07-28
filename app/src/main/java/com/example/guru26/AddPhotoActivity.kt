@@ -32,6 +32,9 @@ class AddPhotoActivity : AppCompatActivity() {
     private lateinit var editText05: EditText
     private lateinit var editText06: EditText
     private lateinit var editText07: EditText
+    private var likeCount: Int = 0
+    private var isLiked: Boolean = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +55,7 @@ class AddPhotoActivity : AppCompatActivity() {
         button.setOnClickListener {
             contentUpload()
         }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -116,4 +120,6 @@ class AddPhotoActivity : AppCompatActivity() {
             // Handle failure
         }
     }
+
+
 }

@@ -22,7 +22,7 @@ class WorteFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+/*
     private lateinit var adapter:PosterAdapter
     private lateinit var rv_poster: RecyclerView
     private lateinit var posterList:ArrayList<Poster>
@@ -86,5 +86,5 @@ class WorteFragment : Fragment() {
 
         )
 
-    }
+    }*/
 }
