@@ -43,7 +43,7 @@ class Detail : AppCompatActivity() {
         Glide.with(this).load(imageUrl).into(findViewById(R.id.detail_imageview))
 
         // mainLink 버튼 클릭 시 링크로 이동
-        findViewById<Button>(R.id.mainLink).setOnClickListener {
+        val mainLinkButton = findViewById<Button>(R.id.mainLink).setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(exhLink))
             startActivity(intent)
         }
@@ -61,7 +61,25 @@ class Detail : AppCompatActivity() {
         backButton.setOnClickListener {
             onBackPressed()
         }
+
+        // ImageButton으로 정의되어 있다면 ImageButton 타입으로 타입 변경
+        val shareButton = findViewById<ImageButton>(R.id.shareButton)
+
+        shareButton.setOnClickListener {
+            // 공유 기능 코드
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "게시물 공유")
+            shareIntent.putExtra(
+                Intent.EXTRA_TEXT,
+                "전시회 이름: $exhName\n장소: $exhPlace\n 개장시간:$exhTime\n 일시: $exhStartDay ~ $exhEndDay\n 사이트:$exhLink"
+
+            )
+            startActivity(Intent.createChooser(shareIntent, "게시물 공유하기"))
+        }
+
     }
+
 
     private fun handleLikeButtonClick(exhName: String, currentFavoriteCount: Int) {
         val currentUser = FirebaseAuth.getInstance().currentUser
@@ -116,6 +134,7 @@ class Detail : AppCompatActivity() {
                 // 에러 처리를 해주시면 됩니다.
             }
     }
+
 
     private fun updateLikeButtonUI(exhName: String, favoriteCount: Int) {
         // 좋아요 버튼 UI 업데이트
