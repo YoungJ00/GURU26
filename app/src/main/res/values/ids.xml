@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="linearLayout02" type="id" />
+    <item name="tv_name" type="id" />
+    <item name="tv_place" type="id" />
+    <item name="tv_end_date" type="id" />
+    <item name="tv_start_date" type="id" />
+    <item name="rv_poster" type="id" />
+
 </resources>
