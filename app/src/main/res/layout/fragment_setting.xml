@@ -39,10 +39,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
-
             android:orientation="horizontal"
             android:paddingLeft="20dp">
 
@@ -60,13 +59,12 @@
                 android:paddingVertical="15dp">
 
                 <TextView
-                    android:id="@+id/textView17"
+                    android:id="@+id/tv_user_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:text="jih32002"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 

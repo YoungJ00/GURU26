@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.google.android.material.tabs.TabLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -57,6 +59,33 @@ class SettingFragment : Fragment() {
 
 
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // 사용자 이메일 주소를 표시할 TextView를 찾습니다.
+        val tvUserEmail: TextView = view.findViewById(R.id.tv_user_email)
+
+        // FirebaseAuth 인스턴스를 가져옵니다.
+        val auth = FirebaseAuth.getInstance()
+
+        // 현재 로그인된 사용자가 있는지 확인합니다.
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            // 로그인된 사용자의 이메일 주소를 가져옵니다.
+            val userEmail = currentUser.email
+
+            // 이메일 주소에서 '@'를 기준으로 문자열을 분할합니다.
+            val parts = userEmail?.split("@")
+            val username = parts?.get(0) // '@' 앞의 텍스트를 가져옵니다.
+
+            // 가져온 유저이름을 TextView에 설정합니다.
+            tvUserEmail.text = username
+        } else {
+            // 로그인되지 않은 경우에는 TextView를 숨깁니다.
+            tvUserEmail.visibility = View.GONE
+        }
     }
 
 

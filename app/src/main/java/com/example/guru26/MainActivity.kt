@@ -45,8 +45,8 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 R.id.third -> {
-                    startActivity(Intent(this, Detail::class.java))
-                }
+                    val settingFragment = SettingFragment()
+                    supportFragmentManager.beginTransaction().replace(R.id.fl_container, settingFragment).commit()                }
             }
             true
         }

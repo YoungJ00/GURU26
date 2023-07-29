@@ -36,6 +36,16 @@ class AddPhotoActivity : AppCompatActivity() {
     private var isLiked: Boolean = false
 
 
+    private fun generateRandomId(): String {
+        val random = Random()
+        val sb = StringBuilder(16)
+        repeat(16) {
+            val num = random.nextInt(10)
+            sb.append(num)
+        }
+        return sb.toString()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_photo)
@@ -110,7 +120,13 @@ class AddPhotoActivity : AppCompatActivity() {
 
             contentDTO.timeStamp = System.currentTimeMillis()
 
+            val randomId = generateRandomId()
+            contentDTO.documentId = randomId
+
+
             firestore?.collection("images")?.add(contentDTO)?.addOnSuccessListener {
+
+
                 setResult(RESULT_OK)
                 finish()
             }?.addOnFailureListener {

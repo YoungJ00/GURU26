@@ -1,90 +1,117 @@
 package com.example.guru26
-
+import android.content.Intent
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ListenerRegistration
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.FirebaseFirestore
+import com.bumptech.glide.Glide
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [WorteFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class WorteFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-/*
-    private lateinit var adapter:PosterAdapter
-    private lateinit var rv_poster: RecyclerView
-    private lateinit var posterList:ArrayList<Poster>
 
+    private var firestore: FirebaseFirestore? = null
+    private var contentDTOs: ArrayList<ContentDTO> = arrayListOf()
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: YourAdapter
+    private lateinit var snapshotListener: ListenerRegistration
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_worte2, container, false)
 
+        firestore = FirebaseFirestore.getInstance()
+        recyclerView = view.findViewById(R.id.rv_poster2)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        adapter = YourAdapter()
+        recyclerView.adapter = adapter
 
+        // Fetch data using addSnapshotListener
+        fetchData()
+
+        return view
+    }
+
+    private fun fetchData() {
+        val currentUserUid = FirebaseAuth.getInstance().currentUser?.uid
+        if (currentUserUid != null) {
+            snapshotListener = firestore?.collection("images")?.whereEqualTo("uid", currentUserUid) // 이 부분을 추가하여 현재 사용자와 같은 사람이 작성한 데이터만 가져옵니다.
+                ?.addSnapshotListener { querySnapshot, error ->
+                    if (error != null) {
+                        // Handle error
+                        return@addSnapshotListener
+                    }
+
+                    contentDTOs.clear()
+                    for (snapshot in querySnapshot!!) {
+                        val item = snapshot.toObject(ContentDTO::class.java)
+                        item?.let { contentDTOs.add(it) }
+                    }
+                    // Sort the list in reverse order (most recent items first)
+                    contentDTOs.sortByDescending { it.timeStamp }
+                    adapter.notifyDataSetChanged()
+                } ?: return
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_worte2, container, false)
+    override fun onDestroy() {
+        super.onDestroy()
+        // Remove the snapshot listener to avoid memory leaks
+        snapshotListener.remove()
     }
+    inner class YourAdapter : RecyclerView.Adapter<YourAdapter.CustomViewHolder>() {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+            return CustomViewHolder(view)
+        }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment WorteFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            WorteFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
+            val contentDTO = contentDTOs[position]
+
+            // 데이터 설정
+            holder.exhNameTextView.text = contentDTO.exhName
+            holder.exhPlaceTextView.text = contentDTO.exhPlace
+            holder.exhStartDayTextView.text = contentDTO.exhStartDay
+            holder.exhEndDayTextView.text = contentDTO.exhEndDay
+
+            // 이미지 설정
+            Glide.with(holder.itemView.context).load(contentDTO.imageUrl).into(holder.posterImageView)
+
+
+            holder.itemView.setOnClickListener {
+                val contentDTO = contentDTOs[position]
+
+                val intent = Intent(activity, Detail::class.java)
+                intent.putExtra("exhName", contentDTO.exhName)
+                intent.putExtra("exhPlace", contentDTO.exhPlace)
+                intent.putExtra("exhStartDay", contentDTO.exhStartDay)
+                intent.putExtra("exhEndDay", contentDTO.exhEndDay)
+                intent.putExtra("imageUrl", contentDTO.imageUrl)
+                intent.putExtra("explain", contentDTO.explain)
+                intent.putExtra("exhTime", contentDTO.exhTime)
+                intent.putExtra("exhLink", contentDTO.exhLink)
+                intent.putExtra("favoriteCount", contentDTO.favoriteCount)
+
+                activity?.startActivity(intent)
             }
+        }
+
+        override fun getItemCount(): Int {
+            return contentDTOs.size
+        }
+
+        inner class CustomViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+            val posterImageView: ImageView = view.findViewById(R.id.iv_poster)
+            val exhNameTextView: TextView = view.findViewById(R.id.tv_name)
+            val exhPlaceTextView: TextView = view.findViewById(R.id.tv_place)
+            val exhStartDayTextView: TextView = view.findViewById(R.id.tv_start_date)
+            val exhEndDayTextView: TextView = view.findViewById(R.id.tv_end_date)
+        }
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
-        super.onViewCreated(view, savedInstanceState)
-        dataInitialize()
-        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        rv_poster = view.findViewById(R.id.rv_poster)
-        rv_poster.layoutManager=layoutManager
-        rv_poster.setHasFixedSize(true)
-        rv_poster.adapter=PosterAdapter(posterList)
-    }
-
-
-    private fun dataInitialize(){
-
-        posterList = arrayListOf(
-            Poster(R.drawable.rectangle_657, "두 가지 색 : 이색", 20230720 - 31, "50주년 기념관 2층"),
-            Poster(R.drawable.poster, "시각디자인 졸업전시회 '금'", 20230702, "이음 갤러리"),
-
-        )
-
-    }*/
 }
