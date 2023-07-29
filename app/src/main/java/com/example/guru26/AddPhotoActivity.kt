@@ -120,10 +120,6 @@ class AddPhotoActivity : AppCompatActivity() {
 
             contentDTO.timeStamp = System.currentTimeMillis()
 
-            val randomId = generateRandomId()
-            contentDTO.documentId = randomId
-
-
             firestore?.collection("images")?.add(contentDTO)?.addOnSuccessListener {
 
 

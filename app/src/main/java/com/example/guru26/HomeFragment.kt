@@ -82,14 +82,18 @@ class HomeFragment : Fragment() {
             // 이미지 설정
             Glide.with(holder.itemView.context).load(contentDTO.imageUrl).into(holder.posterImageView)
 
-
             holder.itemView.setOnClickListener {
-                val contentDTO = contentDTOs[position]
-
                 val intent = Intent(activity, Detail::class.java)
-                intent.putExtra("documentID", contentDTO.documentId)
-
-
+                intent.putExtra("exhName", contentDTO.exhName)
+                intent.putExtra("exhPlace", contentDTO.exhPlace)
+                intent.putExtra("exhStartDay", contentDTO.exhStartDay)
+                intent.putExtra("exhEndDay", contentDTO.exhEndDay)
+                intent.putExtra("exhTime", contentDTO.exhTime)
+                intent.putExtra("explain", contentDTO.explain)
+                intent.putExtra("imageUrl", contentDTO.imageUrl)
+                intent.putExtra("exhLink", contentDTO.exhLink)
+                intent.putExtra("favoriteCount", contentDTO.favoriteCount)
+                //intent.putExtra("favorites", contentDTO.favorites)
                 activity?.startActivity(intent)
             }
         }

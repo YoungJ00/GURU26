@@ -20,7 +20,7 @@ class WorteFragment : Fragment() {
     private var firestore: FirebaseFirestore? = null
     private var contentDTOs: ArrayList<ContentDTO> = arrayListOf()
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: YourAdapter
+    private lateinit var adapter: WroteAdapter
     private lateinit var snapshotListener: ListenerRegistration
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -29,7 +29,7 @@ class WorteFragment : Fragment() {
         firestore = FirebaseFirestore.getInstance()
         recyclerView = view.findViewById(R.id.rv_poster2)
         recyclerView.layoutManager = LinearLayoutManager(activity)
-        adapter = YourAdapter()
+        adapter = WroteAdapter()
         recyclerView.adapter = adapter
 
         // Fetch data using addSnapshotListener
@@ -65,7 +65,7 @@ class WorteFragment : Fragment() {
         // Remove the snapshot listener to avoid memory leaks
         snapshotListener.remove()
     }
-    inner class YourAdapter : RecyclerView.Adapter<YourAdapter.CustomViewHolder>() {
+    inner class WroteAdapter : RecyclerView.Adapter<WroteAdapter.CustomViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
             return CustomViewHolder(view)
