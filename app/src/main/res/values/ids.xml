@@ -6,5 +6,6 @@
     <item name="tv_end_date" type="id" />
     <item name="tv_start_date" type="id" />
     <item name="rv_poster" type="id" />
+    <item name="imageView5" type="id"/>
 
 </resources>
