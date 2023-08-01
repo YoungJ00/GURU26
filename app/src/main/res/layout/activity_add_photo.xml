@@ -22,9 +22,15 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <View
+            <ImageButton
+                android:id="@+id/btnBack2"
                 android:layout_width="50dp"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/swured"
+                android:contentDescription="no"
+                android:scaleType="center"
+                android:src="@drawable/baseline_arrow_back_white_24"
+                android:stateListAnimator="@null" />
 
             <TextView
                 android:layout_width="0dp"
@@ -175,6 +181,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:hint="yyyy/mm/dd"
                         android:inputType="text"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toBottomOf="@+id/textView11"
@@ -206,6 +213,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:hint="yyyy/mm/dd"
                         android:inputType="text"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toBottomOf="@+id/textView12"
@@ -229,6 +237,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:ems="10"
+                        android:hint="00:00 - 00:00"
                         android:inputType="text"
                         android:textSize="15sp"
                         app:layout_constraintStart_toStartOf="@+id/textView13"
@@ -251,6 +260,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:ems="10"
+                        android:hint="URL을 입력해주세요"
                         android:inputType="text"
                         android:textSize="15sp"
                         app:layout_constraintStart_toStartOf="@+id/textView14"

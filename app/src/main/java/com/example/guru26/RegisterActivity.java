@@ -3,10 +3,12 @@ package com.example.guru26;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +25,9 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mEtEmail, mEtPwd;
     private Button mBtnRegister;
 
+    private ImageButton backButton;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +39,14 @@ public class RegisterActivity extends AppCompatActivity {
         mEtEmail = findViewById(R.id.makeIdEditText);
         mEtPwd = findViewById(R.id.makeEmailEditText);
         mBtnRegister = findViewById(R.id.btnSignIn);
+        backButton = findViewById(R.id.btnBack);
+
+        backButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                onBackPressed();
+            }
+        });
 
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
