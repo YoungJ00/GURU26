@@ -1,9 +1,5 @@
 package com.example.guru26;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
 public class UserAccount {
     public UserAccount() {
     }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -39,237 +38,237 @@
             android:layout_height="match_parent" />
 
     </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/detail_imageview"
-                android:layout_width="match_parent"
-                android:layout_height="350dp"
-                />
-
-            <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/subName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="5dp"
-                android:text="두 가지의 색 : 이색"
-                android:textSize="21sp"
-                android:textStyle="" />
+            android:layout_weight="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingVertical="10dp"
-                android:paddingLeft="10dp">
+                android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:scaleType="center"
-                    android:src="@drawable/_icon__location_pin_" />
-
-                <TextView
-                    android:id="@+id/mainPlace"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:text="서울여자대학교 50주년기념관 2층"
-                    android:textSize="15sp"
-                    android:textStyle="normal" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingVertical="10dp"
-                android:paddingLeft="10dp">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:scaleType="center"
-                    android:src="@drawable/group_762" />
-
-                <LinearLayout
+                    android:id="@+id/detail_imageview"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/startDay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/noto_sans"
-                        android:paddingLeft="5dp"
-                        android:text="2023.7.20"
-                        android:textSize="15sp"
-                        android:textStyle="normal" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/noto_sans"
-                        android:paddingLeft="5dp"
-                        android:text=" - "
-                        android:textSize="15sp"
-                        android:textStyle="normal" />
-                    <TextView
-                        android:id="@+id/endDay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/noto_sans"
-                        android:paddingLeft="5dp"
-                        android:text="2023.7.31"
-                        android:textSize="15sp"
-                        android:textStyle="normal" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingVertical="10dp"
-                android:paddingLeft="10dp">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:scaleType="center"
-                    android:src="@drawable/_icon__clock_" />
-
-                <TextView
-                    android:id="@+id/mainTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/noto_sans"
-                    android:paddingLeft="5dp"
-                    android:text="12:00 - 18:00"
-                    android:textSize="15sp"
-                    android:textStyle="normal" />
-
-            </LinearLayout>
+                    android:layout_height="350dp" />
 
                 <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/subName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="5dp"
+                        android:text="두 가지의 색 : 이색"
+                        android:textSize="21sp"
+                        android:textStyle="" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:scaleType="center"
+                            android:src="@drawable/_icon__location_pin_" />
+
+                        <TextView
+                            android:id="@+id/mainPlace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="서울여자대학교 50주년기념관 2층"
+                            android:textSize="15sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:scaleType="center"
+                            android:src="@drawable/group_762" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/startDay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/noto_sans"
+                                android:paddingLeft="5dp"
+                                android:text="2023.7.20"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/noto_sans"
+                                android:paddingLeft="5dp"
+                                android:text=" - "
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+                            <TextView
+                                android:id="@+id/endDay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/noto_sans"
+                                android:paddingLeft="5dp"
+                                android:text="2023.7.31"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:scaleType="center"
+                            android:src="@drawable/_icon__clock_" />
+
+                        <TextView
+                            android:id="@+id/mainTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/noto_sans"
+                            android:paddingLeft="5dp"
+                            android:text="12:00 - 18:00"
+                            android:textSize="15sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <View
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent"/>
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"/>
 
-                    <Button
-                        android:id="@+id/mainLink"
-                        android:backgroundTint="@color/swured"
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:text="전시 웹사이트 방문"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" />
+                        <Button
+                            android:id="@+id/mainLink"
+                            android:backgroundTint="@color/swured"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:text="전시 웹사이트 방문"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
 
-                    <View
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent" />
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
 
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="30dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#D9D9D9" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingVertical="30dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="10dp"
+                        android:text="전시소개"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#D9D9D9" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp"
-                android:text="전시소개"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/mainExplain"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="20dp"
-                android:text="제42회 조병철 개인전이 7월 19일(수)부터 30일(일)까지 서울
+                    <TextView
+                        android:id="@+id/mainExplain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="20dp"
+                        android:text="제42회 조병철 개인전이 7월 19일(수)부터 30일(일)까지 서울
 인사동 소재의 갤러리 라메르 3층 전관에서 진행되며,
 오프닝은 7월 19일(수) 오후 5시이다. 작가가 자아내는 선의
 세밀한 움직임으로부터 느껴지는 힘과 짜임새 있는 명암대비는 관람객의 눈길을 끈다. 홍익대학교 미술대학 서양학과 / 미술대학원 회화과를 졸업했으며, 세계 각국에서 개인전과 단체전, 국제전을 400여회 이상 진행한 실력있는 작가로 알려져 있다."
-                android:textSize="15sp" />
+                        android:textSize="15sp" />
 
-        </LinearLayout>
+                </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingVertical="30dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="30dp">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#D9D9D9" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#D9D9D9" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp"
-                android:text="전시관"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="10dp"
+                        android:text="전시관"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/image_2__2_" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_2__2_" />
 
-        </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -287,8 +286,7 @@
         <View
             android:layout_weight="1"
             android:layout_width="300dp"
-            android:layout_height="match_parent"
-            />
+            android:layout_height="match_parent"/>
 
 
         <LinearLayout
@@ -303,8 +301,7 @@
                 android:src="@drawable/_icon__heart_outline_"
                 android:scaleType="center"
                 android:backgroundTint="#ffffff"
-                android:contentDescription="좋아요"
-                />
+                android:contentDescription="좋아요"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -313,8 +310,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    />
+                    android:layout_height="10dp"/>
 
                 <TextView
                     android:id="@+id/like_count"
@@ -331,8 +327,11 @@
                     android:layout_height="10dp" />
 
             </LinearLayout>
+
         </LinearLayout>
+
     </LinearLayout>
+
 </LinearLayout>
 
 

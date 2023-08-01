@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".WorteFragment">
 
- =
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_poster2"
             android:layout_width="match_parent"
@@ -15,9 +14,6 @@
             app:layout_constraintEnd_toEndOf="@+id/linearLayout"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
 
 </FrameLayout>

@@ -7,8 +7,6 @@
     tools:context=".LikeFragment"
     android:backgroundTint="#c4c4c4">
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_poster3"
         android:layout_width="match_parent"
@@ -18,8 +16,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
     </androidx.recyclerview.widget.RecyclerView>
-
 
 </FrameLayout>
