@@ -3,8 +3,8 @@ package com.example.guru26
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
                         startActivity(Intent(this, AddPhotoActivity::class.java))
                     } else {
                         // 권한이 거부된 경우, 사용자에게 설명 또는 다른 처리를 수행할 수 있음
-                        // (예: 권한이 거부되었을 때 특정 기능 비활성화 등)
                     }
                 }
                 R.id.third -> {
@@ -67,7 +66,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, AddPhotoActivity::class.java))
             } else {
                 // 권한이 거부된 경우, 사용자에게 설명 또는 다른 처리를 수행할 수 있음
-                // (예: 권한이 거부되었을 때 특정 기능 비활성화 등)
             }
         }
     }
